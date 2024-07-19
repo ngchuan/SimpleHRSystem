@@ -1,0 +1,209 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                " Initial Data Structure - Simple HR System"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// Data structure\r\nlet employee = [\r\n    { id: 1, name: \"John Lim\", post: \"Manager\" },\r\n    { id: 2, name: \"Mary Tan\", post: \"Junior Clerk\" },\r\n    { id: 3, name: \"June Ng\", post: \"Accountant\" }\r\n];\r\n\r\nconsole.log(employee);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[",
+                                "  { id: 1, name: 'John Lim', post: 'Manager' },",
+                                "  { id: 2, name: 'Mary Tan', post: 'Junior Clerk' },",
+                                "  { id: 3, name: 'June Ng', post: 'Accountant' }",
+                                "]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Using Functions to Add Employee"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "let employee = [\r\n    { id: 1, name: \"John Lim\", post: \"Manager\" },\r\n    { id: 2, name: \"Mary Tan\", post: \"Junior Clerk\" },\r\n    { id: 3, name: \"June Ng\", post: \"Accountant\" }\r\n];\r\n\r\nfunction addEmployee(id, name, post) {\r\n    employee.push({ id: id, name: name, post: post });\r\n}\r\n\r\n// Adding a new employee\r\naddEmployee(4, \"Maggie Low\", \"Junior Office Assistant\");\r\n\r\nconsole.log(employee);\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[",
+                                "  { id: 1, name: 'John Lim', post: 'Manager' },",
+                                "  { id: 2, name: 'Mary Tan', post: 'Junior Clerk' },",
+                                "  { id: 3, name: 'June Ng', post: 'Accountant' },",
+                                "  { id: 4, name: 'Maggie Low', post: 'Junior Office Assistant' }",
+                                "]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Using Function Reading an Employee Details"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "let employee = [\r\n    { id: 1, name: \"John Lim\", post: \"Manager\" },\r\n    { id: 2, name: \"Mary Tan\", post: \"Junior Clerk\" },\r\n    { id: 3, name: \"June Ng\", post: \"Accountant\" }\r\n];\r\n\r\nfunction getEmployeeById(id) {\r\n    return employee.find(employee => employee.id === id);\r\n}\r\n\r\n// Reading employee id 2\r\nlet employee2 = getEmployeeById(2);\r\n\r\nconsole.log(employee2);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "{ id: 2, name: 'Mary Tan', post: 'Junior Clerk' }",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Modification Function eg Mary Tan promote to Senior Clerk"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "let employee = [\r\n    { id: 1, name: \"John Lim\", post: \"Manager\" },\r\n    { id: 2, name: \"Mary Tan\", post: \"Junior Clerk\" },\r\n    { id: 3, name: \"June Ng\", post: \"Accountant\" }\r\n];\r\n\r\nfunction updatePostById(id, newpost) {\r\n    let name = employee.find(name => name.id === id);\r\n    if (name) {\r\n        name.post = newpost;\r\n    } else {\r\n        console.log(`Item with id ${id} not found.`);\r\n    }\r\n}\r\n\r\n// Updating the description of employee 2\r\nupdatePostById(2, \"Senior Clerk\");\r\n\r\nconsole.log(employee);\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[",
+                                "  { id: 1, name: 'John Lim', post: 'Manager' },",
+                                "  { id: 2, name: 'Mary Tan', post: 'Senior Clerk' },",
+                                "  { id: 3, name: 'June Ng', post: 'Accountant' }",
+                                "]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Delete function Employee ID : 2"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "let employee = [\r\n    { id: 1, name: \"John Lim\", post: \"Manager\" },\r\n    { id: 2, name: \"Mary Tan\", post: \"Junior Clerk\" },\r\n    { id: 3, name: \"June Ng\", post: \"Accountant\" }\r\n];\r\n\r\nfunction deleteEmployeeById(id) {\r\n    employee = employee.filter(name => name.id !== id);\r\n}\r\n\r\n// Deleting item 2\r\ndeleteEmployeeById(2);\r\n\r\nconsole.log(employee);\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[",
+                                "  { id: 1, name: 'John Lim', post: 'Manager' },",
+                                "  { id: 3, name: 'June Ng', post: 'Accountant' }",
+                                "]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Combine the above as a whole"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "let employees = [\r\n    { id: 1, name: \"John Lim\", post: \"Manager\" },\r\n    { id: 2, name: \"Mary Tan\", post: \"Junior Clerk\" },\r\n    { id: 3, name: \"June Ng\", post: \"Accountant\" }\r\n];\r\n\r\n// Create (Add) Operation\r\nfunction addEmployee(id, name, post) {\r\n    employees.push({ id: id, name: name, post: post });\r\n}\r\n\r\n// Read (Get) Operation\r\nfunction getEmployeeById(id) {\r\n    return employees.find(employee => employee.id === id);\r\n}\r\n\r\n// Update Operation\r\nfunction updatePostById(id, newPost) {\r\n    let employeeToUpdate = employees.find(emp => emp.id === id);\r\n    if (employeeToUpdate) {\r\n        employeeToUpdate.post = newPost;\r\n    } else {\r\n        console.log(`Employee with id ${id} not found.`);\r\n    }\r\n}\r\n\r\n// Delete Operation\r\nfunction deleteEmployeeById(id) {\r\n    employees = employees.filter(emp => emp.id !== id);\r\n}\r\n\r\n// Demonstrate CRUD Operations\r\nconsole.log(\"Initial Employees:\");\r\nconsole.log(employees);\r\n\r\n// Adding a new employee\r\naddEmployee(4, \"Maggie Low\", \"Junior Office Assistant\");\r\nconsole.log(\"After Adding a New Employee:\");\r\nconsole.log(employees);\r\n\r\n// Reading an employee by id\r\nlet employee2 = getEmployeeById(2);\r\nconsole.log(\"Reading Employee with id 2:\");\r\nconsole.log(employee2);\r\n\r\n// Updating the post of an employee\r\nupdatePostById(2, \"Senior Clerk\");\r\nconsole.log(\"After Updating Employee with id 2:\");\r\nconsole.log(employees);\r\n\r\n// Deleting an employee by id\r\ndeleteEmployeeById(2);\r\nconsole.log(\"After Deleting Employee with id 2:\");\r\nconsole.log(employees);\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Initial Employees:",
+                                "[",
+                                "  { id: 1, name: 'John Lim', post: 'Manager' },",
+                                "  { id: 2, name: 'Mary Tan', post: 'Junior Clerk' },",
+                                "  { id: 3, name: 'June Ng', post: 'Accountant' }",
+                                "]",
+                                "After Adding a New Employee:",
+                                "[",
+                                "  { id: 1, name: 'John Lim', post: 'Manager' },",
+                                "  { id: 2, name: 'Mary Tan', post: 'Junior Clerk' },",
+                                "  { id: 3, name: 'June Ng', post: 'Accountant' },",
+                                "  { id: 4, name: 'Maggie Low', post: 'Junior Office Assistant' }",
+                                "]",
+                                "Reading Employee with id 2:",
+                                "{ id: 2, name: 'Mary Tan', post: 'Junior Clerk' }",
+                                "After Updating Employee with id 2:",
+                                "[",
+                                "  { id: 1, name: 'John Lim', post: 'Manager' },",
+                                "  { id: 2, name: 'Mary Tan', post: 'Senior Clerk' },",
+                                "  { id: 3, name: 'June Ng', post: 'Accountant' },",
+                                "  { id: 4, name: 'Maggie Low', post: 'Junior Office Assistant' }",
+                                "]",
+                                "After Deleting Employee with id 2:",
+                                "[",
+                                "  { id: 1, name: 'John Lim', post: 'Manager' },",
+                                "  { id: 3, name: 'June Ng', post: 'Accountant' },",
+                                "  { id: 4, name: 'Maggie Low', post: 'Junior Office Assistant' }",
+                                "]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
